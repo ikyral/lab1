@@ -128,7 +128,7 @@ public class Environment {
             }
             System.out.println();
         }
-        System.out.println("\n\n\n\n");
+        System.out.println("\n");
     }
 
     private void addAgents(Type type, int amount) {
