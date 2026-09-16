@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    private static final int TURNS = 5000;
+    private static final int TURNS = 500000;
     private static final Environment environment = new Environment();
 
     public static void main(String[] args) {
         environment.initGame();
         environment.drawField();
 
-        for (int i = 0; i < TURNS; i++) {
+        for (int i = 1; i <= TURNS; i++) {
             environment.spawnBackgroundPlants();
 
             List<Agent> tmpList = new ArrayList<>(environment.getAvailableAgents());
@@ -24,9 +24,9 @@ public class Main {
             long herbivores = tmpList.stream().filter(a -> a instanceof Herbivore).count();
             long predators = tmpList.stream().filter(a -> a instanceof Predator).count();
 
-            if (i % 50 == 0 || i == TURNS - 1) {
+            if (i % 100 == 0 || i == TURNS - 1) {
                 System.out.printf("Ход %4d | Растений: %4d, Травоядных: %3d, Хищников: %3d%n",
-                        i + 1, plants, herbivores, predators);
+                        i, plants, herbivores, predators);
             }
 
             for (Agent agent : tmpList) {
