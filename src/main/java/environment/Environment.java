@@ -51,12 +51,14 @@ public class Environment {
                 if (y == i && x == j) {
                     continue;
                 }
+
                 Agent neighbor = field[i][j];
                 if (neighbor != null) {
                     neighbors.add(neighbor);
                 }
             }
         }
+
         return neighbors;
     }
 
@@ -72,11 +74,13 @@ public class Environment {
                 if (i == y && j == x) {
                     continue;
                 }
+
                 if (field[i][j] == null) {
                     emptyCells.add(new Point(j, i));
                 }
             }
         }
+
         return emptyCells;
     }
 
@@ -126,8 +130,10 @@ public class Environment {
                     System.out.print(agent.getSymbol() + " ");
                 }
             }
+
             System.out.println();
         }
+
         System.out.println("\n");
     }
 

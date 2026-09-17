@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    private static final int TURNS = 500000;
+    private static final int TURNS = 5000;
     private static final Environment environment = new Environment();
 
     public static void main(String[] args) {

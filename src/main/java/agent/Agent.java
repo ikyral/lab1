@@ -17,6 +17,7 @@ public abstract class Agent {
 
     protected final String symbol;
     protected final Environment environment;
+
     protected int x;
     protected int y;
     protected int energy;

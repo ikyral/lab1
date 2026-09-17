@@ -48,6 +48,7 @@ public class Predator extends Agent {
                 }
             }
         }
+
         return nearest;
     }
 }
