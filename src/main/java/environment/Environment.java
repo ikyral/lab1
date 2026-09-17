@@ -9,7 +9,6 @@ import java.util.Random;
 public class Environment {
     public static final int SIDE = 60;
     private static final Random randomGen = new Random();
-    private static final int BACKGROUND_PLANT_SPAWN = 10;
 
     private final List<Agent> availableAgents = new ArrayList<>();
     private final Agent[][] field = new Agent[SIDE][SIDE];
@@ -104,21 +103,10 @@ public class Environment {
         return agent != null && agent.canEat(target);
     }
 
-    public void spawnBackgroundPlants() {
-        for (int i = 0; i < BACKGROUND_PLANT_SPAWN; i++) {
-            int x = randomGen.nextInt(SIDE);
-            int y = randomGen.nextInt(SIDE);
-            if (field[y][x] == null) {
-                Plant plant = new Plant(x, y, this);
-                addAgent(plant);
-            }
-        }
-    }
-
     public void initGame() {
-        addAgents(Type.PLANT, 600);
-        addAgents(Type.HERBIVORE, 80);
-        addAgents(Type.PREDATOR, 20);
+        addAgents(Type.PLANT, 1300);
+        addAgents(Type.HERBIVORE, 50);
+        addAgents(Type.PREDATOR, 23);
     }
 
     public void drawField() {

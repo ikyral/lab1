@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Herbivore extends Agent {
-    private static final double ESCAPE_PROBABILITY = 0.40;
+    private static final double ESCAPE_PROBABILITY = 0.4;
 
     public Herbivore(int x, int y, Environment environment) {
-        super(x, y, 40, 1, 6, "Т", environment);
+        super(x, y, 50, 1, 6, "Т", environment);
     }
 
     @Override

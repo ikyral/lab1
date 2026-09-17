@@ -16,15 +16,13 @@ public class Main {
         environment.drawField();
 
         for (int i = 1; i <= TURNS; i++) {
-            environment.spawnBackgroundPlants();
-
             List<Agent> tmpList = new ArrayList<>(environment.getAvailableAgents());
 
             long plants = tmpList.stream().filter(a -> a instanceof Plant).count();
             long herbivores = tmpList.stream().filter(a -> a instanceof Herbivore).count();
             long predators = tmpList.stream().filter(a -> a instanceof Predator).count();
 
-            if (i % 100 == 0 || i == TURNS - 1) {
+            if (i % 250 == 0 || i == TURNS - 1) {
                 System.out.printf("Ход %4d | Растений: %4d, Травоядных: %3d, Хищников: %3d%n",
                         i, plants, herbivores, predators);
             }

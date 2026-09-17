@@ -7,7 +7,7 @@ import java.util.List;
 public class Predator extends Agent {
 
     public Predator(int x, int y, Environment environment) {
-        super(x, y, 50, 1, 50, "Х", environment);
+        super(x, y, 50, 1, 20, "Х", environment);
     }
 
     @Override
