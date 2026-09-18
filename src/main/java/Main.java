@@ -25,6 +25,7 @@ public class Main {
             if (i % 250 == 0 || i == TURNS - 1) {
                 System.out.printf("Ход %4d | Растений: %4d, Травоядных: %3d, Хищников: %3d%n",
                         i, plants, herbivores, predators);
+                environment.drawField();
             }
 
             for (Agent agent : tmpList) {

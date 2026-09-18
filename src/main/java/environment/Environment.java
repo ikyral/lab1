@@ -110,6 +110,7 @@ public class Environment {
     }
 
     public void drawField() {
+        System.out.println("\n");
         for (Agent[] agents : field) {
             for (Agent agent : agents) {
                 if (agent == null) {
