@@ -105,25 +105,8 @@ public class Environment {
 
     public void initGame() {
         addAgents(Type.PLANT, 1300);
-        addAgents(Type.HERBIVORE, 50);
+        addAgents(Type.HERBIVORE, 1);
         addAgents(Type.PREDATOR, 23);
-    }
-
-    public void drawField() {
-        System.out.println("\n");
-        for (Agent[] agents : field) {
-            for (Agent agent : agents) {
-                if (agent == null) {
-                    System.out.print(". ");
-                } else {
-                    System.out.print(agent.getSymbol() + " ");
-                }
-            }
-
-            System.out.println();
-        }
-
-        System.out.println("\n");
     }
 
     private void addAgents(Type type, int amount) {
