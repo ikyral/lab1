@@ -8,10 +8,9 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Herbivore extends Agent {
-    private static final double ESCAPE_PROBABILITY = 0.4;
 
     public Herbivore(int x, int y, Environment environment) {
-        super(x, y, 50, 1, 6, "Т", environment);
+        super(x, y, 50, 2, 3, "Т", environment);
     }
 
     @Override
@@ -25,10 +24,7 @@ public class Herbivore extends Agent {
         Predator nearestPredator = findNearestPredator(environment.getNeighbors(x, y, VISION_AREA));
 
         if (nearestPredator != null) {
-            int dist = Math.abs(x - nearestPredator.getPoint().x()) + Math.abs(y - nearestPredator.getPoint().y());
-            if (dist <= 1 || ThreadLocalRandom.current().nextDouble() < ESCAPE_PROBABILITY) {
-                nextPoint = chooseEscapePoint(nearestPredator, environment);
-            }
+            nextPoint = chooseEscapePoint(nearestPredator, environment);
         }
 
         if (nextPoint == null) {
